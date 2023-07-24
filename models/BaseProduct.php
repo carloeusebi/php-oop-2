@@ -1,16 +1,16 @@
 <?php
 
-class Product
+class BaseProduct
 {
     protected string $animal_type;
     protected float $price;
-    protected string $img_url;
+    protected string $url;
 
-    public function __construct(string $animal_type, float $price, string $img_url)
+    public function __construct(string $animal_type = '', float $price = 0, string $url = '')
     {
         $this->setAnimalType($animal_type);
         $this->setPrice($price);
-        $this->setImgUrl($img_url);
+        $this->setImgUrl($url);
     }
 
     // SETTERS
@@ -25,15 +25,14 @@ class Product
 
     public function setPrice(float $price): bool
     {
-        if (!is_numeric($price) || $price <= 0) return false;
+        if ($price <= 0) return false;
         $this->price = $price;
         return true;
     }
 
     public function setImgUrl(string $url): bool
     {
-        if (!filter_var($url, FILTER_VALIDATE_URL)) return false;
-        $this->img_url = $url;
+        $this->url = $url;
         return true;
     }
 
@@ -44,13 +43,13 @@ class Product
         return $this->animal_type;
     }
 
-    public function getPrice(): float
+    public function getPrice(): string
     {
-        return $this->animal_type;
+        return "€ " . $this->price;
     }
 
     public function getImgUrl(): string
     {
-        return $this->img_url;
+        return "https://arcaplanet.vtexassets.com/arquivos/ids" . $this->url;
     }
 }
