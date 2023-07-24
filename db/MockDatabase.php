@@ -10,16 +10,16 @@ class MockDatabase
                 "product_name" => "Royal Canin Mini Adult",
                 "animal_type" => "dog",
                 "price" => 43.99,
-                "img_url" => '',
+                "img_url" => '245173/almo-nature-holistic-cane-adult-medium-pollo-e-riso.jpg',
                 "weight_in_grams" => 545,
-                "ingredients" => ["ham", "rise"]
+                "ingredients" => ["ham", "rice"]
             ],
             [
                 "id" => 2,
                 "product_name" => "Almo Nature Holistic Maintenance Medium Large Tonno e Riso",
                 "animal_type" => "dog",
                 "price" => 44.99,
-                "img_url" => '',
+                "img_url" => '245173/almo-nature-holistic-cane-adult-medium-pollo-e-riso.jpg',
                 "weight_in_grams" => 600,
                 "ingredients" => ["beef", "cereals"]
             ],

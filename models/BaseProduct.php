@@ -54,6 +54,6 @@ class BaseProduct
 
     public function getImgUrl(): string
     {
-        return "https://arcaplanet.vtexassets.com/arquivos/ids" . $this->url;
+        return "https://arcaplanet.vtexassets.com/arquivos/ids/" . $this->url;
     }
 }

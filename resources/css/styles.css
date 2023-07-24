@@ -1,0 +1,14 @@
+header{
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid gray;
+}
+
+.products-container .col {
+    padding: 0 .5rem;
+}
+
+.my-card{
+    padding: 0 .75rem;
+    border: 1px solid lightgray;
+}
