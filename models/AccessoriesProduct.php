@@ -17,27 +17,24 @@ class AccessoriesProduct extends BaseProduct
 
     // SETTERS
 
-    public function setMaterial(string $material): bool
+    private function setMaterial(string $material): bool
     {
         $this->material = $material;
         return true;
     }
 
-    public function setDimensions(string $dimensions): bool
+    private function setDimensions(string $dimensions): bool
     {
         $this->dimensions = $dimensions;
         return true;
     }
 
-    // GETTERS
-
-    public function getMaterial(): string
+    public function renderCard(): string
     {
-        return $this->material;
-    }
-
-    public function getDimensions(): string
-    {
-        return $this->dimensions;
+        $html = parent::renderCard();
+        $html .= '<p>Material: ' . $this->material . '</p>';
+        $html .= '<p>Dimensions: ' . $this->dimensions . '</p>';
+        $html .= '</div>';
+        return $html;
     }
 }

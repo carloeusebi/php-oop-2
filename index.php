@@ -43,17 +43,11 @@ $my_test_card = $products[0];
     <div class=" container">
         <main>
             <div class="row row-cols-3 my-5 products-container">
-                <div class="col">
-                    <div class="my-card">
-                        <img class="img-fluid" src="<?= $my_test_card->getImgUrl() ?>" alt="<?= $my_test_card->product_name ?>">
-                        <h2><?= $my_test_card->product_name ?></h2>
-                        <p><?= $my_test_card->getAnimalType() ?></p>
-                        <p>Price: <?= $my_test_card->getPrice() ?></p>
-                        <p>Net weight: <?= $my_test_card->getWeightInGrams() ?></p>
-                        <p>Price: <?= $my_test_card->getPrice() ?></p>
-                        <p>Ingredients: <?= $my_test_card->getIngredients() ?></p>
+                <?php foreach ($products as $product) : ?>
+                    <div class="col">
+                        <?= $product->renderCard() ?>
                     </div>
-                </div>
+                <?php endforeach ?>
             </div>
         </main>
     </div>

@@ -19,7 +19,7 @@ class BaseProduct
 
     // SETTERS
 
-    public function setAnimalType(string $animal_type): bool
+    private function setAnimalType(string $animal_type): bool
     {
         $animal_types = ['dog', 'cat', 'fish', 'bird'];
         if (!in_array($animal_type, $animal_types)) return false;
@@ -27,14 +27,14 @@ class BaseProduct
         return true;
     }
 
-    public function setPrice(float $price): bool
+    private function setPrice(float $price): bool
     {
         if ($price <= 0) return false;
         $this->price = $price;
         return true;
     }
 
-    public function setImgUrl(string $url): bool
+    private function setImgUrl(string $url): bool
     {
         $this->url = $url;
         return true;
@@ -42,18 +42,27 @@ class BaseProduct
 
     // GETTERS
 
-    public function getAnimalType(): string
+    private function getAnimalType(): string
     {
         return $this->animal_type;
     }
 
-    public function getPrice(): string
+    private function getPrice(): string
     {
         return "€ " . $this->price;
     }
 
-    public function getImgUrl(): string
+    private function getImgUrl(): string
     {
         return "https://arcaplanet.vtexassets.com/arquivos/ids/" . $this->url;
+    }
+
+    public function renderCard(): string
+    {
+        $html = '<div class="my-card">';
+        $html .= '<img class="img-fluid" src="' . $this->getImgUrl() . '" alt="' . $this->product_name . '">';
+        $html .= '<p>' . $this->getAnimalType() . '</p>';
+        $html .= '<p>Price: ' . $this->getPrice() . '</p>';
+        return $html;
     }
 }

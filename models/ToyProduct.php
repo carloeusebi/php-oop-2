@@ -17,27 +17,25 @@ class ToyProduct extends BaseProduct
 
     // SETTERS
 
-    public function setFeatures(string $features): bool
+    private function setFeatures(string $features): bool
     {
         $this->features = $features;
         return true;
     }
 
-    public function setDimensions(string $dimensions): bool
+    private function setDimensions(string $dimensions): bool
     {
         $this->dimensions = $dimensions;
         return true;
     }
 
-    // GETTERS
 
-    public function getFeatures(): string
+    public function renderCard(): string
     {
-        return $this->features;
-    }
-
-    public function getDimensions(): string
-    {
-        return $this->dimensions;
+        $html = parent::renderCard();
+        $html .= '<p>Net weight: ' . $this->features . '</p>';
+        $html .= '<p>Ingredients: ' . $this->dimensions . '</p>';
+        $html .= '</div>';
+        return $html;
     }
 }

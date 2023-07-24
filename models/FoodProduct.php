@@ -17,14 +17,14 @@ class FoodProduct extends BaseProduct
 
     // SETTERS
 
-    public function setWeightInGrams(int $grams): bool
+    private function setWeightInGrams(int $grams): bool
     {
         if ($grams <= 0) return false;
         $this->weight_in_grams = $grams;
         return true;
     }
 
-    public function setIngredients(array $ingredients): bool
+    private function setIngredients(array $ingredients): bool
     {
         $this->ingredients = $ingredients;
         return true;
@@ -32,28 +32,37 @@ class FoodProduct extends BaseProduct
 
     // GETTERS
 
-    public function getWeightInGrams(): string
+    private function getWeightInGrams(): string
     {
         return $this->weight_in_grams . "g";
     }
 
-    public function getIngredients(): string
+    private function getIngredients(): string
     {
         return implode(', ', $this->ingredients);
     }
 
     // ACTIONS
 
-    public function addIngredient(string $ingredient)
+    private function addIngredient(string $ingredient)
     {
         $this->ingredients[] = $ingredient;
     }
 
-    public function removeIngredients(string $ingredient): bool
+    private function removeIngredients(string $ingredient): bool
     {
         $filtered_ingredients = array_filter($this->ingredients, fn ($ing) => $ing !== $ingredient);
         if (count($filtered_ingredients) === count($this->ingredients)) return false;
         $this->ingredients = $filtered_ingredients;
         return true;
+    }
+
+    public function renderCard(): string
+    {
+        $html = parent::renderCard();
+        $html .= '<p>Net weight: ' . $this->getWeightInGrams() . '</p>';
+        $html .= '<p>Ingredients: ' . $this->getIngredients() . '</p>';
+        $html .= '</div>';
+        return $html;
     }
 }
