@@ -29,11 +29,18 @@ class ToyProduct extends BaseProduct
         return true;
     }
 
+    // GETTERS
+
+    private function getFeatures(): string
+    {
+        return ucfirst($this->features);
+    }
+
 
     public function renderCard(): string
     {
         $html = parent::renderCard();
-        $html .= '<p>Net weight: ' . $this->features . '</p>';
+        $html .= '<p>Net weight: ' . $this->getFeatures() . '</p>';
         $html .= '<p>Ingredients: ' . $this->dimensions . '</p>';
         $html .= '</div>';
         return $html;

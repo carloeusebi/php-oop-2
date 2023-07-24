@@ -44,7 +44,7 @@ class BaseProduct
 
     private function getAnimalType(): string
     {
-        return $this->animal_type;
+        return ucfirst($this->animal_type);
     }
 
     private function getPrice(): string

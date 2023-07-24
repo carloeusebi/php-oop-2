@@ -29,10 +29,17 @@ class AccessoriesProduct extends BaseProduct
         return true;
     }
 
+    // GETTERS
+
+    private function getMaterial(): string
+    {
+        return ucfirst($this->material);
+    }
+
     public function renderCard(): string
     {
         $html = parent::renderCard();
-        $html .= '<p>Material: ' . $this->material . '</p>';
+        $html .= '<p>Material: ' . $this->getMaterial() . '</p>';
         $html .= '<p>Dimensions: ' . $this->dimensions . '</p>';
         $html .= '</div>';
         return $html;
