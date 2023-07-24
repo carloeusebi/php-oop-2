@@ -45,7 +45,9 @@ $my_test_card = $products[0];
             <div class="row row-cols-3 my-5 products-container">
                 <?php foreach ($products as $product) : ?>
                     <div class="col">
-                        <?= $product->renderCard() ?>
+                        <a href="#">
+                            <?= $product->renderCard() ?>
+                        </a>
                     </div>
                 <?php endforeach ?>
             </div>
