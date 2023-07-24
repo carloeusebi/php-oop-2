@@ -5,8 +5,8 @@ require_once __DIR__ . '/BaseProduct.php';
 class AccessoriesProduct extends BaseProduct
 {
 
-    protected string $material;
-    protected string $dimensions;
+    private string $material;
+    private string $dimensions;
 
     public function __construct(int $id, string $product_name, string $animal_type, float $price, string $img_url, string $material, string $dimensions = "ND")
     {

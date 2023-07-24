@@ -5,8 +5,8 @@ require_once __DIR__ . '/BaseProduct.php';
 class FoodProduct extends BaseProduct
 {
 
-    protected int $weight_in_grams;
-    protected array $ingredients;
+    private int $weight_in_grams;
+    private array $ingredients;
 
     public function __construct(int $id, string $product_name, string $animal_type, float $price, string $img_url, int $weight_in_grams, array $ingredients)
     {
@@ -44,18 +44,18 @@ class FoodProduct extends BaseProduct
 
     // ACTIONS
 
-    private function addIngredient(string $ingredient)
-    {
-        $this->ingredients[] = $ingredient;
-    }
+    // private function addIngredient(string $ingredient)
+    // {
+    //     $this->ingredients[] = $ingredient;
+    // }
 
-    private function removeIngredients(string $ingredient): bool
-    {
-        $filtered_ingredients = array_filter($this->ingredients, fn ($ing) => $ing !== $ingredient);
-        if (count($filtered_ingredients) === count($this->ingredients)) return false;
-        $this->ingredients = $filtered_ingredients;
-        return true;
-    }
+    // private function removeIngredients(string $ingredient): bool
+    // {
+    //     $filtered_ingredients = array_filter($this->ingredients, fn ($ing) => $ing !== $ingredient);
+    //     if (count($filtered_ingredients) === count($this->ingredients)) return false;
+    //     $this->ingredients = $filtered_ingredients;
+    //     return true;
+    // }
 
     public function renderCard(): string
     {

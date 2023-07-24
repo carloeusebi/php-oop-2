@@ -4,9 +4,9 @@ class BaseProduct
 {
     public int $id;
     public string $product_name;
-    protected string $animal_type;
-    protected float $price;
-    protected string $url;
+    private string $animal_type;
+    private float $price;
+    private string $url;
 
     public function __construct(int $id, string $product_name, string $animal_type, float $price, string $url)
     {
