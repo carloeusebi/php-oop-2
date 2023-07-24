@@ -21,7 +21,7 @@ class BaseProduct
 
     public function setAnimalType(string $animal_type): bool
     {
-        $animal_types = ['Dog', 'Bird', 'Fish', 'Bird'];
+        $animal_types = ['dog', 'cat', 'fish', 'bird'];
         if (!in_array($animal_type, $animal_types)) return false;
         $this->animal_type = $animal_type;
         return true;

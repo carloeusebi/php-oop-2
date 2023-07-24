@@ -2,24 +2,24 @@
 
 require_once __DIR__ . '/BaseProduct.php';
 
-class ToyProduct extends BaseProduct
+class ToyProducts extends BaseProduct
 {
 
-    protected string $material;
+    protected string $features;
     protected string $dimensions;
 
-    public function __construct(int $id, string $product_name, string $animal_type, float $price, string $img_url, string $material, string $dimensions = "ND")
+    public function __construct(int $id, string $product_name, string $animal_type, float $price, string $img_url, string $features, string $dimensions)
     {
         parent::__construct($id, $product_name, $animal_type, $price, $img_url);
-        $this->setMaterial($material);
+        $this->setFeatures($features);
         $this->setDimensions($dimensions);
     }
 
     // SETTERS
 
-    public function setMaterial(string $material): bool
+    public function setFeatures(string $features): bool
     {
-        $this->material = $material;
+        $this->features = $features;
         return true;
     }
 
@@ -31,9 +31,9 @@ class ToyProduct extends BaseProduct
 
     // GETTERS
 
-    public function getMaterial(): string
+    public function getFeatures(): string
     {
-        return $this->material;
+        return $this->features;
     }
 
     public function getDimensions(): string
