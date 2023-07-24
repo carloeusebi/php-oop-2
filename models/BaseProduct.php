@@ -2,12 +2,16 @@
 
 class BaseProduct
 {
+    public int $id;
+    public string $product_name;
     protected string $animal_type;
     protected float $price;
     protected string $url;
 
-    public function __construct(string $animal_type = '', float $price = 0, string $url = '')
+    public function __construct(int $id, string $product_name, string $animal_type, float $price, string $url)
     {
+        $this->id = $id;
+        $this->product_name = $product_name;
         $this->setAnimalType($animal_type);
         $this->setPrice($price);
         $this->setImgUrl($url);

@@ -8,9 +8,9 @@ class FoodProduct extends BaseProduct
     protected int $weight_in_grams;
     protected array $ingredients;
 
-    public function __construct(string $animal_type, float $price, string $img_url, int $weight_in_grams, array $ingredients)
+    public function __construct(int $id, string $product_name, string $animal_type, float $price, string $img_url, int $weight_in_grams, array $ingredients)
     {
-        parent::__construct($animal_type, $price, $img_url);
+        parent::__construct($id, $product_name, $animal_type, $price, $img_url);
         $this->setWeightInGrams($weight_in_grams);
         $this->setIngredients($ingredients);
     }
